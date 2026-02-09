@@ -1,0 +1,11 @@
+pipeline {
+    agent { label 'java' }
+
+    stages {
+        stage('Git Clone') {
+            steps {
+                echo "Cloning GitHub repo..."
+                checkout scm
+            }
+        }
+        
