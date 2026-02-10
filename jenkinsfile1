@@ -13,6 +13,9 @@ triggers {
 
         stage('Run Kubernetes Manifests') {
             steps {
+                sh "kubectl get pods"
+		        sh "kubectl get rs"
+		        sh "kubectl get deployment"
                 echo "Applying Kubernetes YAML files..."
                 sh '''
                   kubectl apply -f deployment.yaml
