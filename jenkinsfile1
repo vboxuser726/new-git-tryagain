@@ -1,6 +1,8 @@
 pipeline {
     agent { label 'java' }
-
+triggers {
+    pollSCM('H/2 * * * *')
+}
     stages {
         stage('Git Clone') {
             steps {
